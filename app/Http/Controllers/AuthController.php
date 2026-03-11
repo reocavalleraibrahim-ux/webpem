@@ -25,6 +25,7 @@ class AuthController extends Controller
             session([
                 'id'        =>  $user->id,
                 'username'  =>  $user->username,
+                'name'      =>  $user->name
             ]);
             return redirect()->intended('/dashboard');
         }

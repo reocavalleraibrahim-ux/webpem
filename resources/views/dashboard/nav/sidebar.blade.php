@@ -19,55 +19,30 @@
             </span>
             <span class="pc-mtext" data-i18n="Dashboard">Dashboard</span>
           </a>
-        </li>
-
-        @if(session('role') == 'admin')
-        <li class="pc-item pc-caption">
-          <label data-i18n="UI Components">Admin Sector</label>
-          <i class="ph ph-pencil-ruler"></i>
-        </li>  
-
-        <li class="pc-item">
-          <a href="{{ url('/users') }}" class="pc-link">
-            <span class="pc-micon"><i class="ph ph-user"></i></span>
-            <span class="pc-mtext">Akun</span>
-          </a>
-        </li>
-
-        <li class="pc-item">
-          <a href="{{ url('/ukt') }}" class="pc-link">
-            <span class="pc-micon"><i class="ph ph-calendar"></i></span>
-            <span class="pc-mtext">Ujian Kenaikan Tingkat</span>
-          </a>
-        </li>
-
-        @endif    
+        </li> 
 
         <li class="pc-item pc-caption">
-          <label data-i18n="pages">Team</label>
+          <label data-i18n="pages">Master</label>
           <i class="ph ph-shield-checkered"></i>
         </li>
         <li class="pc-item">
-          <a href="{{url('/jeja')}}" class="pc-link">
-            <span class="pc-micon"> <i class="ph ph-user"></i></span>
-            <span class="pc-mtext">Data Jeja</span>
+          <a href="{{url('/slider')}}" class="pc-link">
+            <span class="pc-micon"> <i class="ph ph-image"></i></span>
+            <span class="pc-mtext">Slider</span>
+          </a>
+        </li>
+        <li class="pc-item">
+          <a href="{{url('/berita')}}" class="pc-link">
+            <span class="pc-micon"> <i class="ph ph-newspaper"></i></span>
+            <span class="pc-mtext">Berita</span>
           </a>
         </li>
 
         <li class="pc-item pc-caption">
-          
-          <i class="ph ph-tree-structure"></i>
+          <label data-i18n="pages"></label>
+          <i class="ph ph-shield-checkered"></i>
         </li>
-        <li class="pc-item pc-hasmenu">
-          <a href="#!" class="pc-link"
-            ><span class="pc-micon"> <i class="ph ph-calendar"></i> </span><span class="pc-mtext" data-i18n="Menu levels">Event</span
-            ><span class="pc-arrow"><i class="ti ti-chevron-right"></i></span
-          ></a>
-          <ul class="pc-submenu">
-            <li class="pc-item"><a class="pc-link" href="{{url('/eventUKT')}}" data-i18n="Ujian Kenaikan Tingkat">Ujian Kenaikan Tingkat</a></li>
-            
-          </ul>
-        </li>
+
         <li class="pc-item">
             <form action="{{ url('/logout') }}" method="POST">
                 @csrf
