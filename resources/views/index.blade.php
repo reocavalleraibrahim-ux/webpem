@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - SoftLand Bootstrap Template</title>
+  <title>Biro Pemerintahan Otonomi Daerah dan Kerja Sama Provinsi Jawa Tengah</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="{{ asset('softland/img/favicon.png')}}" rel="icon">
-  <link href="{{ asset('softland/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+  <link href="{{ asset('softland/img/jateng.png')}}" rel="icon">
+  <link href="{{ asset('softland/img/jateng.png') }}" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -44,16 +44,16 @@
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">SoftLand</h1>
+        <h1 class="sitename">Biro Pemerintahan <br> Otonomi Daerah dan Kerja Sama</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="#about">Tentang Kami</a></li>
+          <li><a href="#features">Visi Misi</a></li>
+          <li><a href="#pricing">Berita</a></li>
+          <!--<li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
               <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -69,8 +69,8 @@
               <li><a href="#">Dropdown 3</a></li>
               <li><a href="#">Dropdown 4</a></li>
             </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
+          </li>-->
+          <!--<li><a href="#contact">Contact</a></li>-->
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -84,20 +84,32 @@
     <section id="hero" class="hero section dark-background">
 
       <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out">
-            <img src="assets/img/phone_1.png" alt="Phone 1" class="phone-1">
-            <img src="assets/img/phone_2.png" alt="Phone 2" class="phone-2">
-          </div>
-          <div class="col-lg-8 d-flex flex-column justify-content-center align-items text-center text-md-start" data-aos="fade-up">
-            <h2>Promote Your App with SoftLand</h2>
-            <p>We are team of talented designers making websites with Bootstrap</p>
-            <div class="d-flex mt-4 justify-content-center justify-content-md-start">
-              <a href="#" class="download-btn"><i class="bi bi-google-play"></i> <span>Google Play</span></a>
-              <a href="#" class="download-btn"><i class="bi bi-apple"></i> <span>App Store</span></a>
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="..." alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="..." alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="..." alt="Third slide">
+              </div>
             </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
-        </div>
       </div>
 
     </section><!-- /Hero Section -->
