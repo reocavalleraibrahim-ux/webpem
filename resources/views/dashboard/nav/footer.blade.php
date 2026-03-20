@@ -16,6 +16,7 @@
 
     <!-- [Page Specific JS] start -->
     <!-- apexcharts js -->
+    <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('datta/js/plugins/apexcharts.min.js') }}"></script>
 
     <script src="{{ asset('datta/js/plugins/jsvectormap.min.js') }}"></script>
@@ -29,6 +30,19 @@
     <script src="{{ asset('datta/js/plugins/bootstrap.min.js') }}"></script>
     <script src="{{ asset('datta/js/script.js') }}"></script>
     <script src="{{ asset('datta/js/theme.js') }}"></script>
+
+    <script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('admin/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('admin/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('admin/plugins/jszip/jszip.min.js') }}"></script>
+    <script src="{{ asset('admin/plugins/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('admin/plugins/pdfmake/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 
 
        
@@ -56,7 +70,22 @@
       layout_theme_sidebar_change('false');
     </script>
             
-
+<script>
+    $(function () {
+    $("#example2").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+      "paging": true,
+      "lengthChange": false,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    
+  });
+</script>
   </body>
   <!-- [Body] end -->
 </html>

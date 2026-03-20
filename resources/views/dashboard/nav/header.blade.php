@@ -29,6 +29,10 @@
 <!-- [Template CSS Files] -->
 <link rel="stylesheet" href="{{ asset('datta/css/style.css') }}" id="main-style-link" />
 <link rel="stylesheet" href="{{ asset('datta/css/style-preset.css') }}" />
+<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+<link rel="stylesheet" href="{{ asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-14K1GBX9FG"></script>
 <script>

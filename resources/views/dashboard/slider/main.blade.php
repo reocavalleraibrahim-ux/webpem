@@ -17,7 +17,7 @@
               </div>
               <div class="card-body px-0 py-3">
                 <div class="table-responsive">
-                  <table class="table table-hover mb-0">
+                  <table class="table table-hover mb-0" id="example2">
                     <thead>
                         <th>No</th>
                         <th>Gambar</th>

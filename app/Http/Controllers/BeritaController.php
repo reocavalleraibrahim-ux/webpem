@@ -12,7 +12,9 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        //
+        $page = 'Berita';
+        $berita = Berita::all();
+        return view('dashboard.berita.main',compact('page','berita'));
     }
 
     /**
@@ -20,7 +22,9 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        //
+        $page = 'Berita';
+        $act = 'create';
+        return view('dashboard.berita.form',compact('page','act'));
     }
 
     /**
@@ -28,7 +32,20 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'thumbnail'     =>  'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'judul'         =>  'required|string',
+            'isi'           =>  'required|string'
+        ]);
+
+        $imagePath = $request->file('thumbnail')->store('berita','public');
+        Berita::create([
+            'judul'     =>  $request->judul,
+            'isi'       =>  $request->isi,
+            'thumbnail' =>  $imagePath
+        ]);
+
+        return redirect('/berita')->with('success','berhasil menambahkan berita');
     }
 
     /**
@@ -42,24 +59,52 @@ class BeritaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Berita $berita)
+    public function edit(String $id)
     {
-        //
+        $berita = Berita::where(['id' => $id])->first();
+        $page = 'Berita';
+        $act = 'edit';
+        return view('dashboard.berita.form',compact('page','act','berita'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Berita $berita)
+    public function update(Request $request, String $id)
     {
-        //
+        $request->validate([
+            'thumbnail'     =>  'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'judul'         =>  'required|string',
+            'isi'           =>  'required|string'
+        ]);
+
+        if($request->hasFile('thumbnail')){
+            $imagePath = $request->file('thumbnail')->store('berita','public');
+            $berita = Berita::where(['id' => $id]);
+            $berita->update([
+                'judul'     =>  $request->judul,
+                'isi'       =>  $request->isi,
+                'thumbnail' =>  $imagePath
+            ]);
+        }else{
+            $berita = Berita::where(['id' => $id]);
+            $berita->update([
+                'judul'     =>  $request->judul,
+                'isi'       =>  $request->isi
+            ]);
+        }
+
+        return redirect('/berita')->with('success','berhasil update berita');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Berita $berita)
+    public function destroy(String $id)
     {
-        //
+        $berita = Berita::where(['id' => $id]);
+        $berita->delete($id);
+
+        return redirect('/berita')->with('success','Berhasil menghapus Berita');
     }
 }
