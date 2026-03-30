@@ -49,10 +49,10 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">Tentang Kami</a></li>
-          <li><a href="#features">Visi Misi</a></li>
-          <li><a href="#featured">Berita</a></li>
+          <li><a href="{{url('/')}}#hero" >Home</a></li>
+          <li><a href="{{url('/')}}#about">Tentang Kami</a></li>
+          <li><a href="{{url('/')}}#features">Visi Misi</a></li>
+          <li><a href="{{url('/')}}#featured">Berita</a></li>
           <li class="dropdown"><a href="#"><span>Dokumen Publik</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               @foreach($kategori as $k)
@@ -60,7 +60,6 @@
               @endforeach
             </ul>
           </li>
-          <!--<li><a href="#contact">Contact</a></li>-->
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

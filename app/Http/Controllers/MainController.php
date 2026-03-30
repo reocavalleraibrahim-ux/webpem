@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Slider;
 use App\Models\Berita;
+use App\Models\Master;
+use App\Models\Kategori;
+use App\Models\Dokumen;
 
 class MainController extends Controller
 {
@@ -14,8 +17,11 @@ class MainController extends Controller
     public function index()
     {
         $slider = Slider::all();
+        $visi = Master::where(['header' => 'visi'])->first();
+        $misi = Master::where(['header' => 'misi'])->first();
         $berita = Berita::limit(6)->orderBy('id','desc')->get();
-        return view('index',compact('slider','berita'));
+        $kategori = Kategori::all();
+        return view('index',compact('slider','berita','visi','misi','kategori'));
     }
 
     /**
@@ -77,5 +83,13 @@ class MainController extends Controller
     {
         $berita = Berita::where(['id' => $id])->first();
         return view('detailBerita',compact('berita'));
+    }
+
+    public function dok(String $id)
+    {
+        $kategori = Kategori::all();
+        $kat = Kategori::where(['id' => $id])->first();
+        $dokumen = Dokumen::where(['kategori' => $id])->get();
+        return view('dok',compact('kategori','kat','dokumen'));
     }
 }

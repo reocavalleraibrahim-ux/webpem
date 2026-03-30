@@ -1,4 +1,4 @@
-@include('nav.header')
+@include('nav.header2')
 
   <main class="main">
     <section id="hero" class="hero section dark-background">
@@ -23,9 +23,10 @@
         <h2>{{$berita->judul}}</h2>
       </div>
       <p>
-        {{$berita->isi}}
+        {!! $berita->isi !!}
       </p>
     </div>
+    <center><a href="{{url()->previous()}}" class="btn btn-warning">Kembali</a></center>
 </section>
   </main>
 

@@ -1,9 +1,9 @@
 @extends('dashboard.layout.app')
 
 @if($act == 'create')
-  @section('title','Tambah Berita')
+  @section('title','Tambah Master Data')
 @else
-  @section('title','Edit Berita')
+  @section('title','Edit Master Data')
 @endif
 
 @section('content')
@@ -12,55 +12,44 @@
     <div class="col-xl-12 col-md-8">
             <div class="card Recent-Users table-card">
               <div class="card-header">
-                <a href="{{ url('/berita')}}" class="btn btn-warning"><i class="ph ph-arrow-left"></i> Kembali</a> <br><br>
+                <a href="{{ url('/master')}}" class="btn btn-warning"><i class="ph ph-arrow-left"></i> Kembali</a> <br><br>
               </div>
               <div class="card-body px-0 py-3">
                 <div class="table-responsive">
                 @if($act == 'create')
-                  <form method="post" action="{{ url('/berita')}}" enctype="multipart/form-data">
+                  <form method="post" action="{{ url('/master')}}" enctype="multipart/form-data">
                 @else
-                  <form method="post" action="{{ url('/berita/'.$berita->id)}}" enctype="multipart/form-data">
+                  <form method="post" action="{{ url('/master/'.$master->id)}}" enctype="multipart/form-data">
                   @method('PUT')
                 @endif
                      @csrf
                     <div class="container mt-12">
                     <div class="row g-5">
                         <div class="col-md-6">
-                          @if($act == 'create')
-                            <img id="prev" alt="" src="{{ asset('admin/dist/img/thumb.jfif')}}" style="max-width:500px;">
-                          @else
-                            <img id="prev" alt="" src="{{ asset('storage/'.$berita->thumbnail)}}" style="max-width:500px;">
-                          @endif
-                        </div>
-                        <div class="col-md-6">
                             <div class="col-md-12" >
-                                <label for="name" class="form-label">Judul Berita</label>
+                                <label for="name" class="form-label">Header</label>
                                 @if($act == 'edit')
-                                    <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul" value="{{$berita->judul}}">
+                                    <input type="text" class="form-control" id="header" name="header" placeholder="Header" value="{{$master->header}}">
                                 @else
-                                    <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul">
+                                    <input type="text" class="form-control" id="header" name="header" placeholder="Header">
                                 @endif
                             </div>
                             <div class="col-md-12" >
-                                <label for="name" class="form-label">Isi Berita</label>
+                                <label for="name" class="form-label">Isi</label>
                                 @if($act == 'edit')
-                                    <textarea name="isi" id="editor" cols="10">{!! $berita->isi !!}</textarea>
+                                    <textarea name="isi" id="editor" cols="10">{!! $master->isi !!}</textarea>
                                 @else
                                     <textarea name="isi" id="editor" cols="10"></textarea>
                                 @endif
                             </div>
-                        </div>                        
-                        <div class="col-md-6">
-                            <label for="name" class="form-label">Thumbnail Berita</label>
-                            <input type="file" class="form-control" id="thumbnail" name="thumbnail" placeholder="Thumbnail">
-                        </div>
+                        </div>    
                         <div class="col-md-6">
                         </div>
                         <div class="col-md-6">
                           @if($act == 'create')
-                            <input type="submit" class="btn btn-primary" name="Buat Berita">
+                            <input type="submit" class="btn btn-primary" name="Buat">
                           @else
-                            <input type="submit" class="btn btn-primary" name="Update Berita">
+                            <input type="submit" class="btn btn-primary" name="Update">
                           @endif
                         </div>
                     </div>
