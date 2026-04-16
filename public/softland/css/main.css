@@ -427,6 +427,14 @@ h6 {
   padding: 30px 0;
   position: relative;
 }
+.footer2 {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-size: 14px;
+  text-align: center;
+  padding: 30px 0;
+  position: absolute;
+}
 
 .footer h3 {
   font-size: 36px;
@@ -653,7 +661,15 @@ section,
   padding: 120px 0 60px 0;
   display: flex;
   align-items: center;
-  background: url(../img/hero-bg.jpg);
+  
+}
+.hero2 {
+  width: 100%;
+  min-height: 5vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  
 }
 
 .hero:before {

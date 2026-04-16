@@ -130,14 +130,33 @@
 
       @foreach($berita as $b)
           <div class="col-md-4">
-            <div class="card">
-              <div class="img">
-                <img src="{{ asset('storage/'.$b->thumbnail) }}" alt="" class="img-fluid">
-              </div>
-              <h2 class="title"><a href="{{url('detailBerita/'.$b->id)}}">{{$b->judul}}</a></h2>
-              <p>
-                {!! substr($b->isi,0,150) !!}
-              </p>
+            <div class="card p-3 h-100">
+                <div class="text-center mb-3">
+                    <img src="{{ asset('storage/'.$b->thumbnail) }}" 
+                        class="img-fluid rounded" 
+                        style="max-height:200px;">
+                </div>
+
+                <h5 class="fw-semibold text-center mb-1">
+                    <a href="{{url('detailBerita/'.$b->id)}}" class="text-dark text-decoration-none">
+                        {{$b->judul}}
+                    </a>
+                </h5>
+
+                <small class="text-muted text-center d-block mb-2">
+                    {{ date('d F Y', strtotime($b->created_at)) }}
+                </small>
+
+                <p class="text-muted text-center">
+                    {!! substr($b->isi,0,150) !!}
+                </p>
+
+                <div class="text-center mt-auto">
+                    <a href="{{url('detailBerita/'.$b->id)}}" class="btn custom-gradient2 btn-sm">
+                        Selengkapnya
+                    </a>
+                </div>
+
             </div>
           </div><!-- End Card Item -->
 
@@ -146,7 +165,11 @@
 
       </div>
 <br>      
-<center><h3><a href="{{ url('/allBerita')}}" class="btn btn-primary">Lihat Semua Berita <span class="bi bi-arrow-right"></span></a></h3></center>
+<div class="text-center mt-4">
+  <a href="{{ url('/allBerita')}}" class="btn custom-gradient">
+    Lihat Semua Berita <i class="bi bi-arrow-right"></i>
+  </a>
+</div>
     </section><!-- /Featured Section -->
 
 

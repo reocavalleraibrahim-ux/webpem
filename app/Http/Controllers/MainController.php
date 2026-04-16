@@ -75,14 +75,16 @@ class MainController extends Controller
     public function allBerita()
     {
         $slider = Slider::all();
-        $berita = Berita::orderBy('id','desc')->get();
-        return view('berita',compact('berita','slider'));
+        $berita = Berita::orderBy('id','desc')->paginate(6);
+        $kategori = Kategori::all();
+        return view('berita',compact('berita','slider','kategori'));
     }
 
     public function detailBerita(String $id)
     {
         $berita = Berita::where(['id' => $id])->first();
-        return view('detailBerita',compact('berita'));
+        $kategori = Kategori::all();
+        return view('detailBerita',compact('berita','kategori'));
     }
 
     public function dok(String $id)

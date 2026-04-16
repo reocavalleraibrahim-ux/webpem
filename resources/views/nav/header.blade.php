@@ -26,6 +26,7 @@
 
   <!-- Main CSS File -->
   <link href="{{ asset('softland/css/main.css')}}" rel="stylesheet">
+  <link href="{{ asset('softland/css/style.css')}}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: SoftLand
@@ -41,10 +42,10 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{ url('/') }}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Biro Pemerintahan <br> Otonomi Daerah dan Kerja Sama</h1>
+        <img src="{{ asset('softland/img/jateng.png')}}" alt="">
+        <h4 class="sitename">Biro Pemerintahan <br> Otonomi Daerah dan Kerja Sama</h4>
       </a>
 
       <nav id="navmenu" class="navmenu">
