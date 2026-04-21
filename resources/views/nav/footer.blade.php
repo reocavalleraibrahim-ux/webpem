@@ -1,18 +1,19 @@
 
   <footer id="footer" class="footer dark-background">
     <div class="container">
-      
+      <div class="social-links">
+        <h3 class="sitename">Kontak</h3>
+        <p><i class="bi bi-geo-alt-fill"></i> Jl. Pahlawan No.9 Mugassari , Kec. Semarang Selatan, Kota Semarang, Jawa Tengah</p>
+        <p><i class="bi bi-telephone-fill"></i> (024)-8311174</p>
+        <p><i class="bi bi-envelope-fill"></i> biropemotdakerjasama@gmail.com</p>
+      </div>
       <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.tiktok.com/@biropemotdaks_jtg?is_from_webapp=1&sender_device=pc" target="blank"><i class="bi bi-tiktok"></i></a>
+        <a href="https://www.instagram.com/biropemotdaks_jateng?igsh=NzV0dmR5NGVnbG80&utm_source=qr" target="blank"><i class="bi bi-instagram"></i></a>
       </div>
       <div class="container">
-        <div class="copyright">
-          <span>{{date('Y')}}</span> <strong class="px-1 sitename">Biro Pemerintahan Otonomi Daerah dan Kerjasama</strong>
-        </div>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+        
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you've purchased the pro version. -->
