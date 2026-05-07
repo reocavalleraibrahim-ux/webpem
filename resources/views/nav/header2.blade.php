@@ -52,8 +52,13 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{{url('/')}}#hero" >Home</a></li>
-          <li><a href="{{url('/')}}#about">Tentang Kami</a></li>
-          <li><a href="{{url('/')}}#features">Visi Misi</a></li>
+          <li><a href="{{url('/')}}#about">Profile</a></li>
+          <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="https://sedunia.jatengprov.go.id/">Sedunia</a></li>
+              <li><a href="https://sikejam.jatengprov.go.id/">Sikejam</a></li>
+            </ul>
+          </li>
           <li><a href="{{url('/')}}#featured">Berita</a></li>
           <li class="dropdown"><a href="#"><span>Dokumen Publik</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>

@@ -19,9 +19,10 @@ class MainController extends Controller
         $slider = Slider::all();
         $visi = Master::where(['header' => 'visi'])->first();
         $misi = Master::where(['header' => 'misi'])->first();
+        $tupoksi = Master::where(['header' => 'tupoksi'])->first();
         $berita = Berita::limit(6)->orderBy('id','desc')->get();
         $kategori = Kategori::all();
-        return view('index',compact('slider','berita','visi','misi','kategori'));
+        return view('index',compact('slider','berita','visi','misi','tupoksi','kategori'));
     }
 
     /**

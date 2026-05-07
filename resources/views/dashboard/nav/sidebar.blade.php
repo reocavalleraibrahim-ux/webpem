@@ -56,6 +56,13 @@
         </li>
 
         <li class="pc-item">
+          <a href="{{url('/saran')}}" class="pc-link">
+            <span class="pc-micon"> <i class="ph ph-newspaper"></i></span>
+            <span class="pc-mtext">Saran</span>
+          </a>
+        </li>
+
+        <li class="pc-item">
             <form action="{{ url('/logout') }}" method="POST">
                 @csrf
                 <button type="submit" style="border:none; background-color:transparent;cursor: pointer; display: inline-flex;align-items: center; width:100%;" class="pc-link" >
